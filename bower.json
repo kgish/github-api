@@ -1,0 +1,22 @@
+{
+  "name": "github-api",
+  "description": "Emberjs demo application demonstrating how to use the GitHub API",
+  "main": "",
+  "authors": [
+    "Kiffin Gish <kiffin.gish@planet.nl>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kgish/github-api",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.7.0",
+    "bootstrap": "4.0.0-alpha.6",
+    "moment": "^2.18.1"
+  }
+}

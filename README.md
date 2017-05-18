@@ -51,7 +51,7 @@ Specify what it takes to deploy your app.
 
 Kiffin Gish \< kiffin.gish@planet.nl \>
 
-[Gishtech](http://gishtech.com)
+[Gishtech](http://gishtech.com)  
 Advanced Software Development for the Web
 
 "You're never too old to learn new stuff..."

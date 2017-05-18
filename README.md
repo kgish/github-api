@@ -1,7 +1,6 @@
 # github-api
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A basic [Emberjs](http://emberjs.com/) demo application demonstrating how to use the [GitHub API v3](https://developer.github.com/v3/) to access information about user repositories.
 
 ## Prerequisites
 
@@ -14,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:kgish/github-api.git` this repository
 * `cd github-api`
 * `npm install`
 
@@ -45,6 +44,14 @@ Specify what it takes to deploy your app.
 
 * [ember.js](http://emberjs.com/)
 * [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* [GitHub API v3](https://developer.github.com/v3/)
+* [Ember Data Github](https://github.com/elwayman02/ember-data-github)
+
+## Author
+
+Kiffin Gish \< kiffin.gish@planet.nl \>
+
+[Gishtech](http://gishtech.com)
+Advanced Software Development for the Web
+
+"You're never too old to learn new stuff..."

@@ -12,10 +12,9 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/kgish/github-api.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kgish/github-api.git"
   },
   "scripts": {
     "build": "ember build",
@@ -39,6 +38,7 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.13.0",
+    "ember-data-github": "^0.3.1",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",

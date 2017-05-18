@@ -1,0 +1,73 @@
+<p>
+  {{link-to "User list" "users.index" }}
+</p>
+
+<h1>User show</h1>
+
+<div class="main-content">
+
+<p>
+  <strong>Login:</strong>
+  <span>{{model.login}}</span>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <span>{{model.name}}</span>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <span>{{model.type}}</span>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <span><img src="{{model.avatarUrl}}" width="50"></span>
+</p>
+
+<p>
+  <strong>Html Url:</strong>
+  <span>{{format-url model.htmlUrl}}</span>
+</p>
+
+<p>
+  <strong>Public gists:</strong>
+  <span>{{model.publicGists}}</span>
+</p>
+
+<p>
+  <strong>Followers:</strong>
+  <span>{{model.followers}}</span>
+</p>
+
+<p>
+  <strong>Following:</strong>
+  <span>{{model.following}}</span>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <span>{{format-date model.createdAt}}</span>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <span>{{format-date model.updatedAt}}</span>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <span>{{format-url model.url}}</span>
+</p>
+
+<p>
+  <strong>Public repos:</strong>
+  <span>{{model.publicRepos}}</span>
+</p>
+
+{{#each repos as |repo|}}
+  2
+{{/each}}
+
+</div>

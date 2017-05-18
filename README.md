@@ -2,6 +2,8 @@
 
 A basic [Emberjs](http://emberjs.com/) demo application demonstrating how to use the [GitHub API v3](https://developer.github.com/v3/) to access information about user repositories.
 
+![Screenshot of the homepage](images/screenshot-homepage.png)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

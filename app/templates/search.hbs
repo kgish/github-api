@@ -2,21 +2,22 @@
 
 <div class="main-content">
 
-  <form>
-      <div class="form-group row">
-        <label for="token">Token</label>
-        {{input value=token class="form-control mr-sm-2" id="token"}}
-      </div>
+    <form>
+        <div class="form-group row">
+            <label for="token">Token</label>
+            {{input value=token class="form-control mr-sm-2" id="token"}}
+        </div>
 
-      <div class="form-group row">
-        <label for="name">Name</label>
-        {{input value=name class="form-control mr-sm-2" id="name"}}
-      </div>
-      <div class="form-group row">
-        <button type="submit" class="btn btn-success">Search</button>
-      </div>
-  </form>
+        <div class="form-group row">
+            <label for="user">User</label>
+            {{input value=user class="form-control mr-sm-2" id="user"}}
+        </div>
 
-  {{outlet}}
+        <div class="form-group row">
+            <button type="submit" class="btn btn-success{{if enableSubmit '' ' disabled'}}" {{action 'submit'}}>Search</button>
+        </div>
+    </form>
+
+    {{outlet}}
 
 </div>

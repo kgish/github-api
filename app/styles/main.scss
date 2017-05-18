@@ -1,20 +1,42 @@
 html,
 body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
 body {
-  background: #ddd;
-  padding-top: 5rem;
+    background: #ddd;
+    padding-top: 5rem;
 }
 
 .main-wrapper {
-  background: #fff;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35)
+    background: #fff;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35)
 }
 
 .main-content {
-  text-align: left;
+    text-align: left;
+}
+
+table {
+    font-size: smaller;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.select-private {
+    width: 100px;
+    font-size: 14px;
+}
+
+.select-language {
+    width: 150px;
+    font-size: 14px;
+}
+
+th {
+  vertical-align: bottom;
 }

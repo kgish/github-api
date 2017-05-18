@@ -1,73 +1,120 @@
 <p>
-  {{link-to "User list" "users.index" }}
+    {{link-to "User list" "users.index" }}
 </p>
 
 <h1>User show</h1>
 
 <div class="main-content">
 
-<p>
-  <strong>Login:</strong>
-  <span>{{model.login}}</span>
-</p>
+    <p>
+        <strong>Login:</strong>
+        <span>{{user.login}}</span>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <span>{{model.name}}</span>
-</p>
+    <p>
+        <strong>Name:</strong>
+        <span>{{user.name}}</span>
+    </p>
 
-<p>
-  <strong>Type:</strong>
-  <span>{{model.type}}</span>
-</p>
+    <p>
+        <strong>Type:</strong>
+        <span>{{user.type}}</span>
+    </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <span><img src="{{model.avatarUrl}}" width="50"></span>
-</p>
+    <p>
+        <strong>Avatar:</strong>
+        <span><img src="{{user.avatarUrl}}" width="50"></span>
+    </p>
 
-<p>
-  <strong>Html Url:</strong>
-  <span>{{format-url model.htmlUrl}}</span>
-</p>
+    <p>
+        <strong>Html Url:</strong>
+        <span>{{format-url user.htmlUrl}}</span>
+    </p>
 
-<p>
-  <strong>Public gists:</strong>
-  <span>{{model.publicGists}}</span>
-</p>
+    <p>
+        <strong>Public gists:</strong>
+        <span>{{user.publicGists}}</span>
+    </p>
 
-<p>
-  <strong>Followers:</strong>
-  <span>{{model.followers}}</span>
-</p>
+    <p>
+        <strong>Followers:</strong>
+        <span>{{user.followers}}</span>
+    </p>
 
-<p>
-  <strong>Following:</strong>
-  <span>{{model.following}}</span>
-</p>
+    <p>
+        <strong>Following:</strong>
+        <span>{{user.following}}</span>
+    </p>
 
-<p>
-  <strong>Created at:</strong>
-  <span>{{format-date model.createdAt}}</span>
-</p>
+    <p>
+        <strong>Created:</strong>
+        <span>{{format-date user.createdAt}}</span>
+    </p>
 
-<p>
-  <strong>Updated at:</strong>
-  <span>{{format-date model.updatedAt}}</span>
-</p>
+    <p>
+        <strong>Updated:</strong>
+        <span>{{format-date user.updatedAt}}</span>
+    </p>
 
-<p>
-  <strong>Url:</strong>
-  <span>{{format-url model.url}}</span>
-</p>
+    <p>
+        <strong>Url:</strong>
+        <span>{{format-url user.url}}</span>
+    </p>
 
-<p>
-  <strong>Public repos:</strong>
-  <span>{{model.publicRepos}}</span>
-</p>
+    <p>
+        <strong>Public repos:</strong>
+        <span>{{user.publicRepos}}</span>
+    </p>
 
-{{#each repos as |repo|}}
-  2
-{{/each}}
+    {{#if repos.length}}
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>
+                        <div class="form-group">
+                            {{#x-select class="form-control select-language" value=currentLanguage action=(action "selectLanguage") as |xs|}}
+                                {{#each listLanguage as |language|}}
+                                    {{#xs.option value=language}}{{language}}{{/xs.option}}
+                                {{/each}}
+                            {{/x-select}}
+                        </div>
+                    </th>
+                    <th>Description</th>
+                    <th>
+                        <div class="form-group">
+                            {{#x-select class="form-control select-private" value=currentPrivate action=(action "selectPrivate") as |xs|}}
+                                {{#each listPrivate as |item|}}
+                                    {{#xs.option value=item.value}}{{item.text}}{{/xs.option}}
+                                {{/each}}
+                            {{/x-select}}
+                        </div>
+                    </th>
+                    <th>Branches</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each listRepos as |repo|}}
+                    <tr>
+                        <td><a href="{{repo.htmlUrl}}" target="_blank">{{repo.name}}</a></td>
+                        <td>{{repo.language}}</td>
+                        <td>{{repo.description}}</td>
+                        <td>{{format-boolean repo.private}}</td>
+                        <td>xxx</td>
+                        <td><span class="whitespace-nowrap">{{format-date repo.createdAt}}</span></td>
+                        <td><span class="whitespace-nowrap">{{format-date repo.updatedAt}}</span></td>
+                    </tr>
+                {{else}}
+                    <tr><td>No repositories</td></tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    {{else}}
+        <p>No repos found</p>
+    {{/if}}
 
 </div>

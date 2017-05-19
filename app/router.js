@@ -13,6 +13,7 @@ Router.map(function() {
           path: ':user_id'
       });
   });
+  this.route('about');
 });
 
 export default Router;

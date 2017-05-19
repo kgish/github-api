@@ -82,7 +82,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>
+                    <th>Language<br/>
                         <div class="form-group">
                             {{#x-select class="form-control select-language" value=currentLanguage action=(action "selectLanguage") as |xs|}}
                                 {{#each listLanguage as |language|}}
@@ -112,12 +112,12 @@
                         <td><a href="{{repo.htmlUrl}}" target="_blank">{{repo.name}}</a></td>
                         <td>{{repo.language}}</td>
                         <td>{{repo.description}}</td>
-                        <td>{{format-boolean repo.private}}</td>
+                        <td>{{if repo.private 'Private' 'Public'}}</td>
                         <td>
                             {{#if repo.branches.length }}
                                 {{#if (gt repo.branches.length 1)}}
                                     <span class="badge badge-default">master</span><br />
-                                    <button class="btn btn-default btn-sm collapse-branch" type="button" data-toggle="collapse" data-target="#collapseBranch-{{index}}" aria-expanded="false" aria-controls="collapseBranch-{{index}}"> {{one-less repo.branches.length}} more {{fa-icon 'caret-down'}}</button>
+                                    <button class="btn btn-default btn-sm collapse-branch" type="button" data-toggle="collapse" data-target="#collapseBranch-{{index}}" aria-expanded="false" aria-controls="collapseBranch-{{index}}"> {{one-less repo.branches.length}} more &nbsp; {{fa-icon 'caret-down'}}</button>
                                     <div class="collapse" id="collapseBranch-{{index}}">
                                         {{#each repo.branches as |branch|}}
                                             {{#if (not-eq branch.name 'master')}}

@@ -9,22 +9,25 @@ export default Ember.Route.extend({
 
         Ember.run.scheduleOnce('afterRender', this, function(){
             // Toggle the branch collapse buttons between caret-up and caret-down
-            // depending on whether opening or closing.
-            let collapse_branch = Ember.$('.collapse-branch');
-            if (collapse_branch.length) {
-                Ember.$('.collapse-branch').forEach(elem => {
-                    elem.click(e => {
-                        let fa = e.target.find('.fa');
-                        if (fa.hasClass('fa-caret-up')) {
-                            fa.removeClass('fa-caret-up');
-                            fa.addClass('fa-caret-down');
-                        } else {
-                            fa.removeClass('fa-caret-down');
-                            fa.addClass('fa-caret-up');
-                        }
+            // depending on whether opening or closing. Note that it takes time
+            // for all repos to be loaded, therefore the 5 second timeout.
+            Ember.run.later(this, () => {
+                let collapse_branch = Ember.$('.collapse-branch');
+                if (collapse_branch.length) {
+                    Ember.$('.collapse-branch').each((index, elem) => {
+                        Ember.$(elem).click(e => {
+                            let fa = Ember.$(e.target).find('.fa');
+                            if (fa.hasClass('fa-caret-up')) {
+                                fa.removeClass('fa-caret-up');
+                                fa.addClass('fa-caret-down');
+                            } else {
+                                fa.removeClass('fa-caret-down');
+                                fa.addClass('fa-caret-up');
+                            }
+                        });
                     });
-                });
-            }
+                }
+            }, 5000);
         });
     },
 

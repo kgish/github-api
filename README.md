@@ -143,7 +143,7 @@ $ ember test
 or if you just want to run a specific test, e.g. the acceptance test for search:
 
 ```
-$ ember test -f 'search page'
+$ ember test -f 'Acceptance | search page'
 ```
 
 

@@ -5,6 +5,10 @@ A basic [Emberjs](http://emberjs.com/) demo application demonstrating how to use
 Screenshot of the homepage:
 ![Screenshot of the homepage](images/screenshot-homepage.png)
 
+## Demo
+
+If you prefer not to have to go through all of the installation, I've deployed the application to Heroku and it can be viewed at https://github-api-demo.herokuapp.com
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -190,6 +194,18 @@ Extra stuff using bower in the `bower.json` file:
 }
 ```
 
+## Deploy
+
+My cloud platform of choice is [Heroku](https://www.heroku.com/home) and these are the commands I executed in order to deploy the application.
+
+```
+$ heroku create github-api-demo
+$ heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz
+$ git push heroku master
+$ heroku open
+```
+
+The application can be seen at https://github-api-demo.herokuapp.com
 
 ## Code quality
 
@@ -211,6 +227,7 @@ To ensure the highest possible code quality, and also prevent bugs as much as po
 * [Ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv)
 * [Bootstrap v4-alpha](https://v4-alpha.getbootstrap.com)
 * [FontAwesome](http://fontawesome.io/icons)
+* [Deploy Ember to Heroku](https://www.heroku.com/emberjs)
 
 
 ## Author

@@ -26,15 +26,21 @@ $ npm install && bower install
 ```
 
 
-## Run
+## Token
 
-Fire up the application by running the following command:
+I use the [ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv) addon for storing secret data and then having it injected into the application environment.
+
+You will need to acquire a [personal access token](https://github.com/settings/tokens) (scope repo) and add this value to the `.env` file.
 
 ```
-$ ember serve
+GITHUB_API_TOKEN=xxxxxxxxxx
 ```
 
-and then point your favorite browser to: [http://localhost:4200](http://localhost:4200).
+Don't forget to restart the application whenever you change this value.
+
+You can also just enter a token directly in the search dialog if you do not want to have to change the `.env` file every time.
+
+Important: if it happens that you start receiving 403 Authorization Failed errors, then it is likely that the token is no longer valid and you will need to create a new token.
 
 
 ## Test
@@ -52,6 +58,17 @@ $ ember test -f 'Acceptance | search page'
 ```
 
 
+## Run
+
+Fire up the application by running the following command:
+
+```
+$ ember serve
+```
+
+and then point your favorite browser to: [http://localhost:4200](http://localhost:4200).
+
+
 ## Build
 
 If you choose to build the application for a specific environment, run this command:
@@ -59,24 +76,6 @@ If you choose to build the application for a specific environment, run this comm
 ```
 $ ember build --environment={development|test|production}
 ```
-
-
-## Token
-
-I use the [ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv) addon for storing secret data and then having it injected into the application environment.
-
-You will need to acquire a [personal access token](https://github.com/settings/tokens) (scope repo) and add this value to the `.env` file.
-
-```
-GITHUB_API_TOKEN=xxxxxxxxxx
-```
-
-Don't forget to restart the application whenever you change this value.
-
-You can also just enter a token directly in the search dialog if you do not want to have to change the `.env` file every time.
-
-Important: if it happens that you start receiving 401 Authorization errors, then it is likely that the token is no longer valid and you will need to create a new token.
-
 
 ## GitHub API Adapter
 

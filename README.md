@@ -7,7 +7,7 @@ Screenshot of the homepage:
 
 ## Demo
 
-If you prefer not to have to go through all of the installation, I've deployed the application to Heroku and it can be viewed at https://github-api-demo.herokuapp.com
+If you prefer not to have to go through all of the installation, I've deployed the application to Heroku and it can be viewed at https://github-api-demo.herokuapp.com.
 
 ## Prerequisites
 
@@ -194,11 +194,12 @@ My cloud platform of choice is [Heroku](https://www.heroku.com/home) and these a
 ```
 $ heroku create github-api-demo
 $ heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz
+$ heroku config:set GITHUB_API_TOKEN=xxxxxx
 $ git push heroku master
 $ heroku open
 ```
 
-The application can be seen at https://github-api-demo.herokuapp.com
+The application can be seen at https://github-api-demo.herokuapp.com.
 
 ## Code quality
 

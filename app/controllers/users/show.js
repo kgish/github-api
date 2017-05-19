@@ -38,6 +38,9 @@ export default Ember.Controller.extend({
         },
         selectPrivate(b) {
             this.set('currentPrivate', b);
+        },
+        reset() {
+
         }
     }
 });

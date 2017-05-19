@@ -97,13 +97,30 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each listRepos as |repo|}}
+                {{#each listRepos as |repo index|}}
                     <tr>
                         <td><a href="{{repo.htmlUrl}}" target="_blank">{{repo.name}}</a></td>
                         <td>{{repo.language}}</td>
                         <td>{{repo.description}}</td>
                         <td>{{format-boolean repo.private}}</td>
-                        <td>xxx</td>
+                        <td>
+                            {{#if repo.branches.length }}
+                                {{#if (gt repo.branches.length 1)}}
+                                    <button class="btn btn-default btn-sm collapse-branch" type="button" data-toggle="collapse" data-target="#collapseBranch-{{index}}" aria-expanded="false" aria-controls="collapseBranch-{{index}}"> {{repo.branches.length}} more {{fa-icon 'caret-down'}}</button>
+                                    <div class="collapse" id="collapseBranch-{{index}}">
+                                        {{#each repo.branches as |branch|}}
+                                            <h5><span class="label label-success">{{brach.name}}</span></h5>
+                                        {{/each}}
+                                    </div>
+                                {{else}}
+                                    {{#each repo.branches as |branch|}}
+                                        <h5><span class="label label-success">{{brach.name}}</span></h5>
+                                    {{/each}}
+                                {{/if}}
+                            {{else}}
+                                0
+                            {{/if}}
+                        </td>
                         <td><span class="whitespace-nowrap">{{format-date repo.createdAt}}</span></td>
                         <td><span class="whitespace-nowrap">{{format-date repo.updatedAt}}</span></td>
                     </tr>

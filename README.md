@@ -29,10 +29,14 @@ I use the [ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv) add
 You will need to acquire a [personal access token](https://github.com/settings/tokens) (scope repo) and add this value to the `.env` file.
 
 ```
-GITHUB_API_TOKEN=7a2b...70f424765622541...d1583692481a930
+GITHUB_API_TOKEN=xxxxxxxxxx
 ```
 
 Don't forget to restart the application whenever you change this value.
+
+You can also just enter a token directly in the search dialog if you do not want to have to change the `.env` file every time.
+
+Important: if it happens that you start receiving 401 Authorization errors, then it is likely that the token is no longer valid and you will need to create a new token.
 
 ## GitHub API Adapter
 
@@ -75,6 +79,31 @@ Screenshot of the search page:
 ## Bootstrap
 
 For the styling and UI components I used the newest version of [Bootstrap v4-alpha](https://v4-alpha.getbootstrap.com/) which provides many new attractive functionalities.
+
+
+## Error handling
+
+For nicer boostrap-like alerts, I use [bootbox](https://github.com/makeusabrew/bootbox). If a server error is detected, the appropriate error message is displayed.
+
+This is done by hooking into the `error` action in `UsersShowRoute`:
+
+```
+actions: {
+    error(error) {
+        let errors = [];
+        error.errors.forEach(error => {
+            errors.push(`${error.status} : ${error.title}`);
+        });
+        bootbox.alert({
+            size: "small",
+            title: "An error has occurred",
+            message: errors.join('<br/>'),
+            callback: function(){ /* your callback code */ }
+        });
+        return true;
+    }
+}
+```
 
 
 ## Running / Development

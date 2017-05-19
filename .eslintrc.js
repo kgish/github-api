@@ -12,6 +12,7 @@ module.exports = {
   },
   globals: {
     "server": true,
-    "moment": true
+    "moment": true,
+    "bootbox": true
   }
 };

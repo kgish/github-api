@@ -72,6 +72,11 @@ export default Ember.Controller.extend({
 Screenshot of the search page:
 ![Screenshot of the homepage](images/screenshot-searchpage.png)
 
+## Bootstrap
+
+For the styling and UI components I used the newest version of [Bootstrap v4-alpha](https://v4-alpha.getbootstrap.com/) which provides many new attractive functionalities.
+
+
 ## Running / Development
 
 * `ember serve`
@@ -121,11 +126,12 @@ Extra stuff using bower in the `bower.json` file:
 
 ## Further Reading / Useful Links
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
+* [Ember.js](http://emberjs.com/)
+* [Ember-CLI](https://ember-cli.com/)
 * [GitHub API v3](https://developer.github.com/v3/)
 * [Ember Data Github](https://github.com/elwayman02/ember-data-github)
-* [ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv)
+* [Ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv)
+* [Bootstrap v4-alpha](https://v4-alpha.getbootstrap.com)
 
 
 ## Author

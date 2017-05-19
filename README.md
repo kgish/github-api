@@ -120,22 +120,38 @@ Also if the given repository has multiple branches, these can be viewed by click
 Screenshot of the results page:
 ![Screenshot of the results page](images/screenshot-userpage.png)
 
+
 ## Running
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Fire up the application by running the following command:
+
+```
+$ ember serve
+```
+
+and then point your favorite browser to: [http://localhost:4200](http://localhost:4200).
 
 
 ### Tests
 
-* `ember test`
-* `ember test --server`
+The complete test suite can be executed in one go by running the following command:
+
+```
+$ ember test
+```
+
+or if you just want to run a specific test, e.g. the acceptance test for search:
+
+```
+$ ember test -f 'search page'
+```
 
 
 ### Building
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+```
+$ ember build --environment={development|test|production}
+```
 
 
 ## Additional Addons
@@ -168,15 +184,16 @@ Extra stuff using bower in the `bower.json` file:
 }
 ```
 
+
 ## Code quality
 
 To ensure the highest possible code quality, and also prevent bugs as much as possible, the following were used:
 
-* [ES6](https://github.com/lukehoban/es6features)
+* [ES6](https://github.com/lukehoban/es6features) transpiled by [Babel](https://babeljs.io)
 * [ESLint](http://eslint.org/)
 * [Editorconfig](http://editorconfig.org/)
 * [Stylelint](https://stylelint.io/)
-* [QUnit](https://qunitjs.com/)
+* [PhantomJS](http://phantomjs.org/) under [QUnit](https://qunitjs.com/)
 
 
 ## References
@@ -187,6 +204,7 @@ To ensure the highest possible code quality, and also prevent bugs as much as po
 * [Ember Data Github](https://github.com/elwayman02/ember-data-github)
 * [Ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv)
 * [Bootstrap v4-alpha](https://v4-alpha.getbootstrap.com)
+* [FontAwesome](http://fontawesome.io/icons)
 
 
 ## Author

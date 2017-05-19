@@ -2,6 +2,7 @@
 
 A basic [Emberjs](http://emberjs.com/) demo application demonstrating how to use the [GitHub API v3](https://developer.github.com/v3/) to access information about user repositories.
 
+Screenshot of the homepage:
 ![Screenshot of the homepage](images/screenshot-homepage.png)
 
 ## Prerequisites
@@ -33,6 +34,43 @@ GITHUB_API_TOKEN=7a2b...70f424765622541...d1583692481a930
 
 Don't forget to restart the application whenever you change this value.
 
+## GitHub API Adapter
+
+I use [Ember Data Github](https://github.com/elwayman02/ember-data-github) for making request to the GitHub API endpoint `api.github.com`
+
+In order to use the token, I inject the token value into the `github-session` service when the search request is initiated.
+
+The `UsersSearchController` looks like this:
+
+```
+import Ember from 'ember';
+import ENV from 'github-api/config/environment';
+
+export default Ember.Controller.extend({
+
+    session: Ember.inject.service('github-session'),
+
+    token: ENV.APP.GITHUB_API_TOKEN,
+    user: null,
+
+    ...
+
+    actions: {
+        submit() {
+            let session = this.get('session'),
+                user = this.get('user'),
+                token = this.get('token');
+
+            session.set('githubAccessToken', token);
+            this.transitionToRoute('users.show', user);
+        }
+    }
+});
+```
+
+
+Screenshot of the search page:
+![Screenshot of the homepage](images/screenshot-searchpage.png)
 
 ## Running / Development
 

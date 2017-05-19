@@ -3,15 +3,17 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('format-url', 'helper:format-url', {
-  integration: true
+    integration: true
 });
 
 // Replace this with your real tests.
 test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+    let url = 'http://www.example.org';
 
-  this.render(hbs`{{format-url inputValue}}`);
+    this.set('inputValue', url);
 
-  assert.equal(this.$().text().trim(), '1234');
+    this.render(hbs`{{format-url inputValue}}`);
+
+    assert.equal(this.$().text().trim(), url);
 });
 

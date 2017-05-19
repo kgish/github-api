@@ -168,8 +168,18 @@ Extra stuff using bower in the `bower.json` file:
 }
 ```
 
+## Code quality
 
-## Further Reading / Useful Links
+To ensure the highest possible code quality, and also prevent bugs as much as possible, the following were used:
+
+* [ES6](https://github.com/lukehoban/es6features)
+* [ESLint](http://eslint.org/)
+* [Editorconfig](http://editorconfig.org/)
+* [Stylelint](https://stylelint.io/)
+* [QUnit](https://qunitjs.com/)
+
+
+## References
 
 * [Ember.js](http://emberjs.com/)
 * [Ember-CLI](https://ember-cli.com/)

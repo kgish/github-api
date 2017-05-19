@@ -21,7 +21,6 @@ module.exports = function(environment) {
             // Here you can pass flags/options to your application instance
             // when it is created
             GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN
-            //GITHUB_API_TOKEN: '78bef7bc8f9301e863636ee75811ecbaa4b28a42'
         }
     };
 

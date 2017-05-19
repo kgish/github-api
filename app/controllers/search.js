@@ -5,10 +5,10 @@ export default Ember.Controller.extend({
 
     session: Ember.inject.service('github-session'),
 
-    // token: '78bef7bc8f9301e863636ee75811ecbaa4b28a42',
-    token: 'bf46f84fc551c257b1c4b5f1c8c5083892ede1f8',
+    token: ENV.APP.GITHUB_API_TOKEN,
     user: null,
 
+    // Disable the submit button unless all fields contain valid values.
     enableSubmit: Ember.computed('token', 'user', function(){
         let user = this.get('user'),
             token = this.get('token');

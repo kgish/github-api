@@ -13,34 +13,73 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
+
 ## Installation
 
-* `git clone git@github.com:kgish/github-api.git` this repository
+* `git clone git@github.com:kgish/github-api.git`
 * `cd github-api`
-* `npm install`
+* `npm install && bower install`
+
+
+## Token
+
+I use the [ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv) addon for storing secret data and then having it injected into the application environment.
+
+You will need to acquire a [personal access token](https://github.com/settings/tokens) (scope repo) and add this value to the `.env` file.
+
+```
+GITHUB_API_TOKEN=7a2b...70f424765622541...d1583692481a930
+```
+
+Don't forget to restart the application whenever you change this value.
+
 
 ## Running / Development
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
 * `ember test`
 * `ember test --server`
 
+
 ### Building
 
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+## Additional Addons
 
-Specify what it takes to deploy your app.
+In order to enhance this application, I used the following extra addons in the `package.json` file:
+
+```
+"devDependencies": {
+    ...
+    "ember-cli-dotenv": "^1.2.0",
+    "ember-cli-sass": "^6.1.3",
+    "ember-data-github": "^0.3.1",
+    "ember-font-awesome": "^3.0.5",
+    "ember-truth-helpers": "^1.3.0",
+    "emberx-select": "^3.0.1",
+    ...
+},
+```
+
+
+## Bower
+
+Extra stuff using bower in the `bower.json` file:
+
+```
+"dependencies": {
+    "font-awesome": "fontawesome#^4.7.0",
+    "bootstrap": "4.0.0-alpha.6",
+    "moment": "^2.18.1"
+}
+```
 
 ## Further Reading / Useful Links
 
@@ -48,6 +87,8 @@ Specify what it takes to deploy your app.
 * [ember-cli](https://ember-cli.com/)
 * [GitHub API v3](https://developer.github.com/v3/)
 * [Ember Data Github](https://github.com/elwayman02/ember-data-github)
+* [ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv)
+
 
 ## Author
 

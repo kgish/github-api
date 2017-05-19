@@ -8,7 +8,23 @@ export default Ember.Route.extend({
         this.controllerFor(this.routeName).send('reset');
 
         Ember.run.scheduleOnce('afterRender', this, function(){
-            Ember.$('.collapse-branch').forEach();
+            // Toggle the branch collapse buttons between caret-up and caret-down
+            // depending on whether opening or closing.
+            let collapse_branch = Ember.$('.collapse-branch');
+            if (collapse_branch.length) {
+                Ember.$('.collapse-branch').forEach(elem => {
+                    elem.click(e => {
+                        let fa = e.target.find('.fa');
+                        if (fa.hasClass('fa-caret-up')) {
+                            fa.removeClass('fa-caret-up');
+                            fa.addClass('fa-caret-down');
+                        } else {
+                            fa.removeClass('fa-caret-down');
+                            fa.addClass('fa-caret-up');
+                        }
+                    });
+                });
+            }
         });
     },
 
@@ -47,13 +63,14 @@ export default Ember.Route.extend({
             error.errors.forEach(error => {
                 errors.push(`${error.status} : ${error.title}`);
             });
+            let _this = this;
             bootbox.alert({
                 size: "small",
                 title: "An error has occurred",
                 message: errors.join('<br/>'),
-                callback: function(){ /* your callback code */ }
+                callback: function(){ _this.transitionTo('search'); }
             });
-            return true;
+            return false;
         }
     }
 });

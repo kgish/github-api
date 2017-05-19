@@ -6,65 +6,79 @@
 
 <div class="main-content">
 
-    <p>
-        <strong>Login:</strong>
-        <span>{{user.login}}</span>
-    </p>
+    <div class="row">
+        <div class="col-md-6">
+            <p>
+                <strong>Avatar:</strong>
+                <span><img src="{{user.avatarUrl}}" width="50"></span>
+            </p>
+        </div>
+    </div>
 
-    <p>
-        <strong>Name:</strong>
-        <span>{{user.name}}</span>
-    </p>
+    <div class="row">
+        <div class="col-md-6">
+            <p>
+                <strong>Login:</strong>
+                <span>{{user.login}}</span>
+            </p>
 
-    <p>
-        <strong>Type:</strong>
-        <span>{{user.type}}</span>
-    </p>
+            <p>
+                <strong>Name:</strong>
+                <span>{{user.name}}</span>
+            </p>
 
-    <p>
-        <strong>Avatar:</strong>
-        <span><img src="{{user.avatarUrl}}" width="50"></span>
-    </p>
+            <p>
+                <strong>Type:</strong>
+                <span>{{user.type}}</span>
+            </p>
 
-    <p>
-        <strong>Html Url:</strong>
-        <span>{{format-url user.htmlUrl}}</span>
-    </p>
+            <p>
+                <strong>Html Url:</strong>
+                <span>{{format-url user.htmlUrl}}</span>
+            </p>
 
-    <p>
-        <strong>Public gists:</strong>
-        <span>{{user.publicGists}}</span>
-    </p>
+            <p>
+                <strong>Public gists:</strong>
+                <span>{{user.publicGists}}</span>
+            </p>
+        </div>
 
-    <p>
-        <strong>Followers:</strong>
-        <span>{{user.followers}}</span>
-    </p>
+        <div class="col-md-6">
+            <p>
+                <strong>Followers:</strong>
+                <span>{{user.followers}}</span>
+            </p>
 
-    <p>
-        <strong>Following:</strong>
-        <span>{{user.following}}</span>
-    </p>
+            <p>
+                <strong>Following:</strong>
+                <span>{{user.following}}</span>
+            </p>
 
-    <p>
-        <strong>Created:</strong>
-        <span>{{format-date user.createdAt}}</span>
-    </p>
+            <p>
+                <strong>Created:</strong>
+                <span>{{format-date user.createdAt}}</span>
+            </p>
 
-    <p>
-        <strong>Updated:</strong>
-        <span>{{format-date user.updatedAt}}</span>
-    </p>
+            <p>
+                <strong>Updated:</strong>
+                <span>{{format-date user.updatedAt}}</span>
+            </p>
 
-    <p>
-        <strong>Url:</strong>
-        <span>{{format-url user.url}}</span>
-    </p>
+            <p>
+                <strong>Url:</strong>
+                <span>{{format-url user.url}}</span>
+            </p>
+        </div>
+    </div>
 
-    <p>
-        <strong>Public repos:</strong>
-        <span>{{user.publicRepos}}</span>
-    </p>
+    <div class="row">
+        <div class="col-md-6">
+            <p>
+                <strong>Public repos:</strong>
+                <span>{{user.publicRepos}}</span>
+            </p>
+        </div>
+    </div>
 
     {{#if repos.length}}
 
@@ -106,19 +120,22 @@
                         <td>
                             {{#if repo.branches.length }}
                                 {{#if (gt repo.branches.length 1)}}
-                                    <button class="btn btn-default btn-sm collapse-branch" type="button" data-toggle="collapse" data-target="#collapseBranch-{{index}}" aria-expanded="false" aria-controls="collapseBranch-{{index}}"> {{repo.branches.length}} more {{fa-icon 'caret-down'}}</button>
+                                    <span class="badge badge-default">master</span><br />
+                                    <button class="btn btn-default btn-sm collapse-branch" type="button" data-toggle="collapse" data-target="#collapseBranch-{{index}}" aria-expanded="false" aria-controls="collapseBranch-{{index}}"> {{one-less repo.branches.length}} more {{fa-icon 'caret-down'}}</button>
                                     <div class="collapse" id="collapseBranch-{{index}}">
                                         {{#each repo.branches as |branch|}}
-                                            <h5><span class="label label-success">{{brach.name}}</span></h5>
+                                            {{#if (not-eq branch.name 'master')}}
+                                                <span class="badge badge-success">{{branch.name}}</span>
+                                            {{/if}}
                                         {{/each}}
                                     </div>
                                 {{else}}
                                     {{#each repo.branches as |branch|}}
-                                        <h5><span class="label label-success">{{brach.name}}</span></h5>
+                                        <span class="badge badge-default">{{branch.name}}</span>
                                     {{/each}}
                                 {{/if}}
                             {{else}}
-                                0
+                                <span class="badge badge-default">none</span>
                             {{/if}}
                         </td>
                         <td><span class="whitespace-nowrap">{{format-date repo.createdAt}}</span></td>

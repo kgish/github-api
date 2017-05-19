@@ -38,6 +38,7 @@ You can also just enter a token directly in the search dialog if you do not want
 
 Important: if it happens that you start receiving 401 Authorization errors, then it is likely that the token is no longer valid and you will need to create a new token.
 
+
 ## GitHub API Adapter
 
 I use [Ember Data Github](https://github.com/elwayman02/ember-data-github) for making request to the GitHub API endpoint `api.github.com`
@@ -76,6 +77,7 @@ export default Ember.Controller.extend({
 Screenshot of the search page:
 ![Screenshot of the homepage](images/screenshot-searchpage.png)
 
+
 ## Bootstrap
 
 For the styling and UI components I used the newest version of [Bootstrap v4-alpha](https://v4-alpha.getbootstrap.com/) which provides many new attractive functionalities.
@@ -106,13 +108,13 @@ actions: {
 ```
 
 
-## Running / Development
+## Running
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 
-### Running Tests
+### Tests
 
 * `ember test`
 * `ember test --server`
@@ -122,6 +124,7 @@ actions: {
 
 * `ember build` (development)
 * `ember build --environment production` (production)
+
 
 ## Additional Addons
 
@@ -152,6 +155,7 @@ Extra stuff using bower in the `bower.json` file:
     "moment": "^2.18.1"
 }
 ```
+
 
 ## Further Reading / Useful Links
 

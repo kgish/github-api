@@ -156,7 +156,7 @@ There is a dropdown for `language` and `private` in order to filter the table li
 Also if the given repository has multiple branches, these can be viewed by clicking on the `more`-button.
 
 Screenshot of the results page:
-![Screenshot of the results page](images/screenshot-userpage.png)
+![Screenshot of the results page](images/screenshot-userpage2.png)
 
 
 

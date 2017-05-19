@@ -151,17 +151,10 @@ actions: {
 
 ## Results page
 
-For a successful search, you will be brought to the results page which will display the general information.
-
-If the user has any repositories, these will be listed in a table below.
-
-There is a dropdown for `language` and `private` in order to filter the table list.
-
-Also if the given repository has multiple branches, these can be viewed by clicking on the `more`-button.
+For a successful search, you will be brought to the results page which will display the general information. If the user has any repositories, these will be listed in a table below. There is a dropdown for `language` and `private` in order to filter the table list. Also if the given repository has multiple branches, these can be viewed by clicking on the `more`-button.
 
 Screenshot of the results page:
 ![Screenshot of the results page](images/screenshot-userpage2.png)
-
 
 
 ## Additional Addons

@@ -26,6 +26,41 @@ $ npm install && bower install
 ```
 
 
+## Run
+
+Fire up the application by running the following command:
+
+```
+$ ember serve
+```
+
+and then point your favorite browser to: [http://localhost:4200](http://localhost:4200).
+
+
+## Test
+
+The complete test suite can be executed in one go by running the following command:
+
+```
+$ ember test
+```
+
+or if you just want to run a specific test, e.g. the acceptance test for search:
+
+```
+$ ember test -f 'Acceptance | search page'
+```
+
+
+## Build
+
+If you choose to build the application for a specific environment, run this command:
+
+```
+$ ember build --environment={development|test|production}
+```
+
+
 ## Token
 
 I use the [ember-cli-dotenv](https://github.com/fivetanley/ember-cli-dotenv) addon for storing secret data and then having it injected into the application environment.
@@ -124,38 +159,6 @@ Also if the given repository has multiple branches, these can be viewed by click
 Screenshot of the results page:
 ![Screenshot of the results page](images/screenshot-userpage.png)
 
-
-## Running
-
-Fire up the application by running the following command:
-
-```
-$ ember serve
-```
-
-and then point your favorite browser to: [http://localhost:4200](http://localhost:4200).
-
-
-### Tests
-
-The complete test suite can be executed in one go by running the following command:
-
-```
-$ ember test
-```
-
-or if you just want to run a specific test, e.g. the acceptance test for search:
-
-```
-$ ember test -f 'Acceptance | search page'
-```
-
-
-### Building
-
-```
-$ ember build --environment={development|test|production}
-```
 
 
 ## Additional Addons

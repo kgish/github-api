@@ -17,9 +17,13 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone git@github.com:kgish/github-api.git`
-* `cd github-api`
-* `npm install && bower install`
+The installation is straight forward and according to the Ember way:
+
+```
+$ git clone git@github.com:kgish/github-api.git
+$ cd github-api
+$ npm install && bower install
+```
 
 
 ## Token
